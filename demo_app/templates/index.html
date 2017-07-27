@@ -1,0 +1,36 @@
+<div class = "main">
+	<h1>CLONE</h1>
+	<h3>SIGN UP</h3>
+	<h4>{{today}}</h4>	</div>
+<form method = 'post'>
+	{% csrf_token %}
+	<div>
+	    <label for="username">Username:</label>
+	    <input id = "username" type = "text" name = "username" placeholder = 'username' value = {{username}}>
+	</div>
+
+
+
+	<div>
+	    <label for ="name">Name:</label>
+	    <input id = "name" type = "text" name = "name" placeholder="name" value = {{name}}>
+	
+	</div>
+
+
+
+	<div>
+		<label for= "email">Email:</label>
+		<input id = "email" type = "text" name = "email" placeholder="email" value = {{email}}>
+	</div>
+
+
+	<div>
+	   <label for= "password">password:</label>
+	   <input id = "password" type = "password" name = "password" placeholder="password" value = {{password}}>
+	</div>
+
+	<input type = "submit" value = "Sign Up">
+
+</form>
+
