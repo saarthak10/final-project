@@ -5,16 +5,20 @@
     <title>LOG IN</title>
 </head>
 <body>
+<form method = 'post'>
+    {% csrf_token%}
 <div>
     <label for username>username:</label>
-    <input id = "username" type = "text" name = "username" placeholder = "username">
+    <input id = "username" type = "text" name = "username" placeholder = "username" value = {{username}}>
 
 </div>
 <div>
     <label for password>password:</label>
-    <input id = "password" type = "text " name = "password" placeholder = "password">
+    <input id = "password" type = "text " name = "password" placeholder = "password" value ={{password}}>
+    <h1>{{ message }}</h1>
 
 </div>
-    <input type = "submit",value = "Log In" >
+</form>
+<input type = "submit",value = "Log In" >
 </body>
 </html>

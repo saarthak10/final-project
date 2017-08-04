@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Feed</title>
 </head>
+
 <body>
-$END$
+<form method = 'POST' >
+    {% csrf_token %}
+
+  {% for post in posts %}
+
+    <h3> Posted by: {{ post.user.username }}</h3>
+    <img src="{{ post.image_url }}">
+    <span>{{ post.caption }}</span>
+     <form method="POST" action="/like/">
+          {% csrf_token %}
+          <input type="hidden" name="post" value="{{ post.id }}">
+         {%if post.has_liked == True%}
+            <input type="submit" class="btn btn-default" value="Unlike">
+         {%else%}
+             <input type="submit" class="btn btn-default" value="Like">
+         {%endif%}
+      </form>
+    <div>{{post.like_count}}</div>
+
+  {% endfor %}
+  <input type = 'submit' value = 'create post'>
+</form>
 </body>
 </html>
